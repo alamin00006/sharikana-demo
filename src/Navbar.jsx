@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-white shadow-md flex items-center p-4">
+    <div className="navbar bg-white  flex items-center p-4 custom-container">
       <img
         src="/images/Sharikana-logo.png" // Adjusted path
         alt="Logo"

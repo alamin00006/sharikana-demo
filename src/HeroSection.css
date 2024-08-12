@@ -1,40 +1,119 @@
 .form-container {
-    position: absolute;
-    right: 1rem; /* Adjusted to move it slightly to the left */
-    top: 24%;
-    width: 40%;
-    padding: 1.5rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(102, 102, 102, 0.1);
-    max-width: 20rem;
+  position: absolute;
+  right: 1rem; /* Adjusted to move it slightly to the left */
+  top: 24%;
+  width: 40%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(102, 102, 102, 0.1);
+  max-width: 20rem;
 }
 
 .form-container input {
-    width: 100%;
-    padding: 1.5rem 1.5rem;
-    border: 1px solid #d1d5db; /* Border color */
-    border-radius: 0.5rem;
-    background-color: white; /* Set background color to white */
-    color: black; /* Set text color to black */
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  border: 1px solid #d1d5db; /* Border color */
+  border-radius: 0.5rem;
+  background-color: white; /* Set background color to white */
+  color: black; /* Set text color to black */
 }
 
 .form-container p {
-    color: #10b981; /* Green color for the text */
-    margin-bottom: 1rem;
-    text-align: center;
+  color: #10b981; /* Green color for the text */
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .form-container button {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    background-color: #10b981; /* Green color for the button */
-    color: white;
-    border-radius: 0.5rem;
-    border: none;
-    cursor: pointer;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #10b981; /* Green color for the button */
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
 }
 
 .form-container button:hover {
-    background-color: #059669; /* Darker green for hover effect */
+  background-color: #059669; /* Darker green for hover effect */
+}
+
+/* Responsive */
+
+/* For Full Website */
+@media (max-width: 576px) {
+  .custom-container {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .left-part-title {
+    top: 20px;
+    left: 0px;
+  }
+  .right-part {
+    right: 0px;
+    top: 260px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .custom-container {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .custom-container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .left-part-title {
+    top: 80px;
+    left: 80px;
+  }
+  .right-part {
+    right: 140px;
+    top: 40px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .custom-container {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .left-part-title {
+    top: 100px;
+    left: 100px;
+  }
+  .right-part {
+    right: 150px;
+    top: 50px;
+  }
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .custom-container {
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .left-part-title {
+    top: 190px;
+    left: 270px;
+  }
+  .right-part {
+    right: 200px;
+    top: 100px;
+  }
 }
