@@ -58,17 +58,17 @@ const HeroSection = () => {
 
       {/* Content on the Left Side */}
       <div className="absolute z-10 px-6 h-full custom-container left-part-title">
-        <h1 className="md:text-5xl text-3xl md:text-black text-white  font-bold text-[#444f60] font-[Poppins] mb-4 md:w-[75%]">
+        <h1 className="md:text-5xl text-3xl md:text-black text-white  font-bold text-[#444f60] font-[Poppins] mb-4 md:w-[50%] w-full">
           Clever{" "}
           <span className="text-[#00a47e] md:text-5xl text-3xl">
             Investment
           </span>{" "}
           Make Your Money Grow
         </h1>
-        <p className="md:text-lg text-sm md:text-gray-600 text-white">
-          Bangladesh’s 1st online fractional <br /> property marketplace
-          platform that allows you to receive <br /> returns on monthly property
-          rental income of up to 15% per year.
+        <p className="md:text-lg text-sm md:text-gray-600 text-white md:w-[40%]">
+          Bangladesh’s 1st online fractional property marketplace platform that
+          allows you to receive returns on monthly property rental income of up
+          to 15% per year.
         </p>
       </div>
 
