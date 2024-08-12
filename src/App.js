@@ -1,7 +1,13 @@
+import React from 'react';
+import HeroSection from './HeroSection';
+import Navbar from './Navbar';
+
+
 function App() {
   return (
-    <div>
-      <h1>Hello Sharikana</h1>
+    <div className="App">
+       <Navbar />
+      <HeroSection />
     </div>
   );
 }
