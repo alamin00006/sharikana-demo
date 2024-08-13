@@ -1,5 +1,5 @@
 import React from "react";
-import { MdFacebook } from "react-icons/md";
+import { FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MdFacebook className="text-xl hover:text-[#1476f1]" />
+            <FaFacebook className="text-xl hover:text-[#1476f1]" />
           </a>
         </div>
       </div>

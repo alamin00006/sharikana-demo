@@ -55,7 +55,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right Part */}
-        <div className="w-full md:w-[45%] p-6 bg-white rounded-lg shadow-lg">
+        <div className="w-full md:w-[45%] p-6 bg-white rounded-lg shadow-lg md:mb-0 mb-2">
           <form onSubmit={handleSubscribe}>
             <div className="mb-4">
               <input
