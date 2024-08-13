@@ -40,6 +40,16 @@
 }
 
 /* Responsive */
+.all_font h1,
+p,
+span {
+  font-family: "Poppins", sans-serif;
+}
+
+.right-part {
+  background-color: white !important;
+  z-index: 999 !important;
+}
 
 /* For Full Website */
 @media (max-width: 576px) {
@@ -47,14 +57,8 @@
     max-width: 540px;
     margin-left: auto;
     margin-right: auto;
-  }
-  .left-part-title {
-    top: 20px;
-    left: 0px;
-  }
-  .right-part {
-    right: 0px;
-    top: 260px;
+
+    /* font-style: italic; */
   }
 }
 
@@ -74,14 +78,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .left-part-title {
-    top: 80px;
-    left: 80px;
-  }
-  .right-part {
-    right: 140px;
-    top: 40px;
-  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -91,14 +87,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .left-part-title {
-    top: 100px;
-    left: 100px;
-  }
-  .right-part {
-    right: 150px;
-    top: 50px;
-  }
 }
 
 /* Extra extra large devices (larger desktops, 1400px and up) */
@@ -107,13 +95,5 @@
     max-width: 1320px;
     margin-left: auto;
     margin-right: auto;
-  }
-  .left-part-title {
-    top: 190px;
-    left: 270px;
-  }
-  .right-part {
-    right: 200px;
-    top: 100px;
   }
 }

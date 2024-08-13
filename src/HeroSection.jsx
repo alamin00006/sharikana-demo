@@ -1,109 +1,102 @@
 import React from "react";
 import "./HeroSection.css";
+import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
+
 const HeroSection = () => {
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+
+    const fullName = e.target.fullName.value;
+    const mobileNumber = e.target.mobileNumber.value;
+    const email = e.target.email.value;
+
+    const formData = {
+      fullName,
+      mobileNumber,
+      email,
+    };
+
+    try {
+      axios.post("http://localhost:5000/api/v1/subscribe", formData);
+
+      toast.success("Thanks for your subscribe");
+    } catch (error) {
+      console.log(error);
+      toast.error("Sorry ! Something is wrong");
+    }
+  };
   return (
-    <div className="relative flex h-screen bg-gradient-to-r from-white via-white to-gray-200 overflow-hidden">
+    <div className="relative bg-gray-200 h-screen overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <img
-          src="/images/card-sharikana.png" // Adjusted path
+          src="/images/card-sharikana.png"
           alt="Hero Background"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Blurred Background Effect */}
-      <div className="relative top-0 left-0 w-[75%] h-full flex items-start justify-start">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1213"
-          height="787"
-          viewBox="0 0 1213 787"
-          fill="none"
-        >
-          <g filter="url(#filter0_b)">
-            <path
-              d="M672.068 606.357C609.745 753.824 368.18 787 -7 787V0H1213C1206.29 41.6717 1187.84 135.539 1167.65 177.636C1142.41 230.257 1069.63 278.733 943.814 320.511C817.999 362.289 749.971 422.023 672.068 606.357Z"
-              fill="white"
-              fillOpacity="0.9"
-            />
-          </g>
-          <defs>
-            <filter
-              id="filter0_b"
-              x="-57"
-              y="-50"
-              width="1320"
-              height="887"
-              filterUnits="userSpaceOnUse"
-              colorInterpolationFilters="sRGB"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feGaussianBlur in="BackgroundImageFix" stdDeviation="25" />
-              <feComposite
-                in2="SourceAlpha"
-                operator="in"
-                result="effect1_backgroundBlur"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect1_backgroundBlur"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
-      </div>
+      {/* Vertical Blurred Background Effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white/30 backdrop-blur-sm"></div>
 
-      {/* Content on the Left Side */}
-      <div className="absolute z-10 px-6 h-full custom-container left-part-title">
-        <h1 className="md:text-5xl text-3xl md:text-black text-white  font-bold text-[#444f60] font-[Poppins] mb-4 md:w-[50%] w-full">
-          Clever{" "}
-          <span className="text-[#00a47e] md:text-5xl text-3xl">
-            Investment
-          </span>{" "}
-          Make Your Money Grow
-        </h1>
-        <p className="md:text-lg text-sm md:text-gray-600 text-white md:w-[40%]">
-          Bangladesh’s 1st online fractional property marketplace platform that
-          allows you to receive returns on monthly property rental income of up
-          to 15% per year.
-        </p>
-      </div>
-
-      {/* Form on the Right Side but Slightly to the Left */}
-      <div className="absolute w-[100%] p-6 bg-white rounded-lg shadow-lg max-w-md right-part">
-        <form>
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="input input-bordered w-full px-4 py-2 border border-gray-300 rounded-lg"
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Mobile No"
-              className="input input-bordered w-full px-4 py-2 border border-gray-300 rounded-lg"
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="input input-bordered w-full px-4 py-2 border border-gray-300 rounded-lg"
-            />
-          </div>
-          <p className="text-xs text-green-600 mb-4 text-center">
-            We will let you know as we launch our website.
+      {/* Content */}
+      <div className="relative custom-container flex flex-col md:flex-row items-center justify-between py-12 z-10 h-full overflow-hidden ">
+        {/* Left Part */}
+        <div className="px-6 text-center md:text-left mb-8 md:mb-0 md:w-1/2">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 all_font">
+            Bangladesh's <span className="text-[#00a47e]">1st online</span>{" "}
+            fractional Property Marketplace Platform
+          </h1>
+          <p className="text-sm md:text-lg text-gray-800 md:text-gray-900 all_font">
+            It allows you to receive returns on monthly property rental income
+            of up to 15% per year.
           </p>
-          <button className="btn btn-success w-full px-4 py-2 bg-green-600 text-white rounded-lg">
-            Subscribe Now
-          </button>
-        </form>
+        </div>
+
+        {/* Right Part */}
+        <div className="w-full md:w-[45%] p-6 bg-white rounded-lg shadow-lg">
+          <form onSubmit={handleSubscribe}>
+            <div className="mb-4">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="input w-full p-3 border border-gray-300 rounded-lg"
+                name="fullName"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="text"
+                placeholder="Mobile No"
+                className="input w-full p-3 border border-gray-300 rounded-lg"
+                name="mobileNumber"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="input w-full p-3 border border-gray-300 rounded-lg"
+                name="email"
+                required
+              />
+            </div>
+            <p className="text-xs text-green-600 mb-4 text-center">
+              We will let you know as we launch our website.
+            </p>
+            <button
+              type="submit"
+              className="btn btn-success w-full px-4 py-2 bg-green-600 text-white rounded-lg"
+            >
+              Subscribe Now
+            </button>
+          </form>
+        </div>
       </div>
+      <Toaster />
     </div>
   );
 };
