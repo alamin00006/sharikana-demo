@@ -9,7 +9,11 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} sharikana. All rights reserved.
         </p>
         <div className="flex justify-center space-x-4">
-          <a href=".." target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.facebook.com/groups/4037818499777265/?mibextid=K35XfP"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaFacebook className="text-xl hover:text-[#1476f1]" />
           </a>
         </div>
