@@ -18,7 +18,7 @@ const HeroSection = () => {
     };
 
     try {
-      axios.post("http://localhost:5000/api/v1/subscribe", formData);
+      axios.post("https://api.psh.com.bd/api/subscribe", formData);
 
       toast.success("Thanks for your subscribe");
     } catch (error) {
