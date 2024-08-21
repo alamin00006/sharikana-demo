@@ -20,12 +20,12 @@ const HeroSection = () => {
     try {
       axios.post("https://api.psh.com.bd/api/subscribe", formData);
 
-      toast.success("Thanks for your subscribe");
+      toast.success("Thanks for your subscription!");
     } catch (error) {
-      console.log(error);
-      toast.error("Sorry ! Something is wrong");
+      toast.error("Sorry! Something went wrong.");
     }
   };
+
   return (
     <div className="relative bg-gray-200 h-screen overflow-hidden">
       {/* Background Image */}
@@ -41,12 +41,12 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white/30 backdrop-blur-sm"></div>
 
       {/* Content */}
-      <div className="relative custom-container flex flex-col md:flex-row items-center justify-between py-12 z-10 h-full overflow-hidden ">
+      <div className="relative custom-container flex flex-col md:flex-row items-center justify-between py-12 z-10 md:h-full overflow-hidden">
         {/* Left Part */}
         <div className="px-6 text-center md:text-left mb-8 md:mb-0 md:w-1/2">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 all_font">
-            Bangladesh's <span className="text-[#00a47e]">1st online</span>{" "}
-            fractional Property Marketplace Platform
+            Bangladesh's <span className="text-[#00a47e]">1st Online</span>{" "}
+            Fractional Property Management Platform
           </h1>
           <p className="text-sm md:text-lg text-gray-800 md:text-gray-900 all_font">
             It allows you to receive returns on monthly property rental income
@@ -55,7 +55,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right Part */}
-        <div className="w-full md:w-[45%] p-6 bg-white rounded-lg shadow-lg md:mb-0 mb-2">
+        <div className="w-full md:w-[45%] p-6 bg-white rounded-lg shadow-lg md:mb-0 mb-2 mt-10">
           <form onSubmit={handleSubscribe}>
             <div className="mb-4">
               <input
